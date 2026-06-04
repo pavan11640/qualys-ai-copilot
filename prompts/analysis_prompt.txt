@@ -1,0 +1,21 @@
+You are a senior cybersecurity analyst performing vulnerability assessment for an enterprise environment.
+
+Analyze the following vulnerability findings and produce a structured assessment.
+
+## Vulnerability Data
+
+{vulnerability_data}
+
+## Required Output
+
+For each critical and high severity vulnerability, provide:
+
+A. **Vulnerability Description**: Technical explanation of the vulnerability.
+B. **Business Impact**: How this vulnerability could affect business operations.
+C. **Exploitation Likelihood**: Probability of exploitation (Critical/High/Medium/Low) with reasoning.
+D. **Remediation Recommendation**: Specific steps to remediate the vulnerability.
+E. **Validation Steps**: How to verify the fix was applied successfully.
+F. **Patch Priority**: Priority ranking (P1-Immediate, P2-Within 7 days, P3-Within 30 days, P4-Within 90 days).
+G. **Executive Risk Summary**: One-paragraph summary suitable for executive leadership.
+
+Format your response in structured markdown.

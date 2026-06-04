@@ -1,0 +1,49 @@
+# ============================================================
+# Qualys AI Copilot - .gitignore
+# ============================================================
+
+# Environment & Secrets
+.env
+.env.local
+.env.production
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Application Outputs
+reports/*.html
+reports/*.pdf
+reports/*.md
+data/snapshot_*.json
+qualys_copilot.log
+
+# Sensitive Data
+data/*.csv
+!data/.gitkeep

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        :root {
+            --critical: #e74c3c;
+            --high: #e67e22;
+            --medium: #f1c40f;
+            --low: #3498db;
+            --info: #95a5a6;
+            --bg: #f8f9fa;
+            --text: #2c3e50;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        header p { opacity: 0.85; font-size: 0.9rem; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--info);
+        }
+        .stat-card.critical { border-top-color: var(--critical); }
+        .stat-card.high { border-top-color: var(--high); }
+        .stat-card.medium { border-top-color: var(--medium); }
+        .stat-card.low { border-top-color: var(--low); }
+        .stat-card .value { font-size: 2rem; font-weight: 700; }
+        .stat-card .label { font-size: 0.85rem; color: #7f8c8d; }
+        .report-body {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .report-body h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 0.3rem; }
+        .report-body h2 { font-size: 1.3rem; margin: 1.2rem 0 0.5rem; color: #34495e; }
+        .report-body h3 { font-size: 1.1rem; margin: 1rem 0 0.4rem; color: #7f8c8d; }
+        .report-body p { margin-bottom: 0.8rem; }
+        .report-body ul, .report-body ol { margin: 0.5rem 0 1rem 1.5rem; }
+        .report-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .report-body th, .report-body td { padding: 0.6rem; border: 1px solid #ecf0f1; text-align: left; }
+        .report-body th { background: #2c3e50; color: white; }
+        .report-body tr:nth-child(even) { background: #f8f9fa; }
+        .report-body code { background: #ecf0f1; padding: 0.2rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: #95a5a6;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ title }}</h1>
+            <p>Generated: {{ generated_at }}</p>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="value">{{ stats['Total Vulnerabilities'] }}</div>
+                <div class="label">Total</div>
+            </div>
+            <div class="stat-card critical">
+                <div class="value">{{ stats['Critical'] }}</div>
+                <div class="label">Critical</div>
+            </div>
+            <div class="stat-card high">
+                <div class="value">{{ stats['High'] }}</div>
+                <div class="label">High</div>
+            </div>
+            <div class="stat-card medium">
+                <div class="value">{{ stats['Medium'] }}</div>
+                <div class="label">Medium</div>
+            </div>
+            <div class="stat-card low">
+                <div class="value">{{ stats['Low'] }}</div>
+                <div class="label">Low</div>
+            </div>
+        </section>
+
+        <section class="report-body">
+            {{ body }}
+        </section>
+
+        <footer>
+            <p>Qualys AI Analyst Copilot &mdash; Powered by Amazon Bedrock (Claude Sonnet)</p>
+        </footer>
+    </div>
+</body>
+</html>

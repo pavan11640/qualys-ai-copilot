@@ -1,0 +1,31 @@
+You are a Chief Information Security Officer (CISO) advisor generating an executive vulnerability assessment report.
+
+## Vulnerability Statistics
+
+{statistics}
+
+## Detailed Findings
+
+{findings}
+
+## Generate Executive Report
+
+Produce a comprehensive executive report with the following sections:
+
+1. **Executive Summary**: High-level overview of the security posture based on scan results.
+
+2. **Overall Risk Posture**: Current risk level (Critical/High/Medium/Low) with justification.
+
+3. **Critical Vulnerabilities**: Summary of all critical findings with immediate action items.
+
+4. **High Risk Vulnerabilities**: Summary of high-severity findings requiring urgent attention.
+
+5. **Most Affected Assets**: List of assets with the highest vulnerability density and associated risk.
+
+6. **Top Remediation Priorities**: Ordered list of remediation actions by business impact.
+
+7. **Recommended Actions**: Strategic and tactical recommendations for the security team.
+
+8. **Conclusion**: Final assessment and forward-looking security posture statement.
+
+Format the report in professional markdown suitable for executive leadership.
